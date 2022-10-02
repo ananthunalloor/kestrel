@@ -4,6 +4,9 @@
     "dictionaryDefinitions": [],
     "dictionaries": [],
     "words": [
+        "clsx",
+        "daisyui",
+        "headlessui",
         "pocketbase",
         "preact",
         "Routable",

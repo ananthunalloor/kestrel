@@ -1,10 +1,11 @@
-import { LoginForm } from '../login-form/login-form';
+import { LoginForm } from '../components/login-form/login-form';
 
 export function Login() {
   return (
-    <>
-      <h1>Login</h1>
-      <LoginForm />
-    </>
+    <div className='w-full h-[90vh] justify-center flex items-center'>
+      <div className='w-[450px]'>
+        <LoginForm />
+      </div>
+    </div>
   );
 }

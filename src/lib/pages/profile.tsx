@@ -1,7 +1,7 @@
-import PocketBase, { User, Admin } from 'pocketbase';
-import { route } from 'preact-router';
+import PocketBase, { User } from 'pocketbase';
 import { useState } from 'preact/hooks';
 import { Auth } from '../types/auth';
+import { onLogout } from '../utils/utils';
 
 export interface ProfileProps {}
 
@@ -10,10 +10,6 @@ export function Profile({}: ProfileProps) {
 
   const [userInfo] = useState<Auth | User>(client.authStore.model as User);
 
-  const onLogout = () => {
-    client.authStore.clear();
-    route('/login', true);
-  };
   console.log(JSON.stringify(userInfo?.profile?.username));
   return (
     <>
