@@ -3,9 +3,9 @@ import { route, RouterOnChangeArgs } from 'preact-router';
 import { signal } from '@preact/signals';
 
 const BASE_URl =
-  process.env.NODE_ENV === 'production'
+  process.env.NODE_ENV === 'development'
     ? 'http://127.0.0.1:8090'
-    : 'https://kestrel.fly.dev/';
+    : 'https://kestrel.fly.dev';
 
 export const client = new PocketBase(BASE_URl);
 
