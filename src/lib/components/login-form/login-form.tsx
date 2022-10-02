@@ -44,7 +44,9 @@ export function LoginForm({ className = '' }: LoginFormProps) {
             class='input input-bordered'
             {...register('email')}
           />
-          <p className='text-error pl-4 pt-1'>{errors.email?.message}</p>
+          <p className='text-error pl-4 pt-1 text-sm'>
+            {errors.email?.message}
+          </p>
         </div>
         <div class='form-control'>
           <label class='label'>
@@ -57,7 +59,9 @@ export function LoginForm({ className = '' }: LoginFormProps) {
             id='password'
             {...register('password')}
           />
-          <p className='text-error pl-4 pt-1'>{errors.password?.message}</p>
+          <p className='text-error pl-4 pt-1 text-sm'>
+            {errors.password?.message}
+          </p>
           <label class='label'>
             <a href='#' class='label-text-alt link link-hover '>
               Forgot password?

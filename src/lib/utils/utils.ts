@@ -2,7 +2,14 @@ import PocketBase from 'pocketbase';
 import { route, RouterOnChangeArgs } from 'preact-router';
 import { signal } from '@preact/signals';
 
-const client = new PocketBase('http://127.0.0.1:8090');
+const BASE_URl =
+  process.env.NODE_ENV === 'production'
+    ? 'http://127.0.0.1:8090'
+    : 'https://kestrel.fly.dev/';
+
+export const client = new PocketBase(BASE_URl);
+
+export const userDetails = client.authStore.model;
 
 export const isUserLoggedIn = signal(client.authStore.isValid || false);
 
