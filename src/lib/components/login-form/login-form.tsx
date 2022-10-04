@@ -1,15 +1,21 @@
-import clsx from 'clsx';
-import { object, string } from 'yup';
 import { yupResolver } from '@hookform/resolvers/yup';
+import clsx from 'clsx';
+import { route } from 'preact-router';
+import { useContext } from 'preact/hooks';
 import { useForm } from 'react-hook-form';
-import { onLogin } from '../../utils/utils';
+import { object, string } from 'yup';
+import { AuthContext } from '../../context/auth-context';
 import { LoginFormType } from '../../types/common';
+import { onLogin } from '../../utils/auth';
+import { alert } from '../../utils/utils';
 
 export interface LoginFormProps {
   className?: string;
 }
 
 export function LoginForm({ className = '' }: LoginFormProps) {
+  const { setIsAuthenticated, setUser } = useContext(AuthContext);
+
   const loginSchema = object({
     email: string().email().required(),
     password: string().required()
@@ -24,7 +30,17 @@ export function LoginForm({ className = '' }: LoginFormProps) {
   });
 
   const onSubmit = async (data: LoginFormType) => {
-    onLogin(data.email, data.password);
+    await onLogin(data.email, data.password)
+      .then(response => {
+        setUser(response.user);
+        setIsAuthenticated(true);
+        route('/', true);
+        alert('success', 'Login successful');
+      })
+      .catch(error => {
+        setIsAuthenticated(false);
+        alert('error', error.message);
+      });
   };
 
   return (
