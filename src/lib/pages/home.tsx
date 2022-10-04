@@ -5,7 +5,7 @@ export interface HomeProps {}
 export function Home({}: HomeProps) {
   return (
     <RequireAuth>
-      <div>Home</div>
+      <div className='w-full h-full'>Home</div>
     </RequireAuth>
   );
 }

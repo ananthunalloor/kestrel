@@ -12,7 +12,7 @@ export function App() {
   return (
     <AuthContextProvider>
       <MainLayout>
-        <div className='w-full h-screen bg-base-100'>
+        <>
           <Toaster
             toastOptions={{
               duration: 2000
@@ -24,7 +24,7 @@ export function App() {
             <Route path='/profile' component={Profile} />
             <Route path='/:+' component={PageNotFound} />
           </Router>
-        </div>
+        </>
       </MainLayout>
     </AuthContextProvider>
   );
