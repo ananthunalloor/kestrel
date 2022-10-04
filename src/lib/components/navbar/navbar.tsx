@@ -15,7 +15,7 @@ export function Navbar({}: NavbarProps) {
     <AuthContext.Consumer>
       {data => {
         return (
-          <header className='navbar bg-base-100 h-20 px-20 drop-shadow-sm'>
+          <header className='navbar bg-base-100 h-20 px-20 drop-shadow-sm sticky top-0 z-30 backdrop-blur transition-all duration-100'>
             <div className='flex-1'>
               <a className=' text-xl' href='/'>
                 KESTREL
