@@ -13,7 +13,9 @@ module.exports = {
     extend: {
       backgroundImage: {
         'login-pattern': "url('/src/assets/svg/login-background.svg')",
-        'login-gradient': "url('/src/assets/svg/login-gradient.svg')"
+        'login-gradient': "url('/src/assets/svg/login-gradient.svg')",
+        'lakeside-sunrise': "url('/src/assets/webp/lakeside-sunrise.webp')",
+        'lakeside-sunset': "url('/src/assets/webp/lakeside-sunset.webp')"
       }
     }
   },

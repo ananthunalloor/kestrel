@@ -1,3 +1,5 @@
+import 'material-symbols';
+import AsyncRoute from 'preact-async-route';
 import Router, { Route } from 'preact-router';
 import { Toaster } from 'react-hot-toast';
 import { AuthContextProvider } from './context/provider/auth-context-provider';
@@ -20,9 +22,9 @@ export function App() {
           />
           <Router onChange={routeHandler}>
             <Route path='/' component={Home} />
-            <Route path='/login' component={Login} />
-            <Route path='/profile' component={Profile} />
-            <Route path='/:+' component={PageNotFound} />
+            <AsyncRoute path='/login' component={Login} />
+            <AsyncRoute path='/profile' component={Profile} />
+            <AsyncRoute path='/:+' component={PageNotFound} />
           </Router>
         </>
       </MainLayout>

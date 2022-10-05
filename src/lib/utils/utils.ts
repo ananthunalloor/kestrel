@@ -23,3 +23,18 @@ export const alert = (
       });
   }
 };
+
+export const dateString = (options?: Intl.DateTimeFormatOptions) =>
+  new Date().toLocaleDateString(window.navigator.language, options);
+
+export const isDay = (sunrise?: number, sunset?: number): boolean => {
+  const currentHour = new Date().getHours();
+
+  function convert(time: number): number {
+    return new Date(time * 1000).getHours();
+  }
+
+  if (sunrise && sunset)
+    return currentHour > convert(sunrise) && currentHour < convert(sunset);
+  else return true;
+};

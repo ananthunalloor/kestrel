@@ -4,11 +4,14 @@
     "dictionaryDefinitions": [],
     "dictionaries": [],
     "words": [
+        "chartjs",
         "clsx",
         "daisyui",
+        "grnd",
         "headlessui",
         "hookform",
         "pocketbase",
+        "Polyhouse",
         "preact",
         "Routable",
         "tailwindcss"

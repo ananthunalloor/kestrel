@@ -3,7 +3,7 @@ import { RequireAuth } from '../ui-components/require-auth/require-auth';
 
 export function MainLayout(props: { children: JSX.Element }) {
   return (
-    <div className='w-full h-screen bg-base-100 flex flex-col'>
+    <div className='w-full h-screen bg-secondary-content flex flex-col '>
       <RequireAuth>
         <Navbar />
       </RequireAuth>
